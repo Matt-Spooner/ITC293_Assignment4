@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Assessment 4, Sign-up page.
+            This page presents the Sign-up form to the user.
+            Matthew Spooner, 8/6/2024.
+        -->
+        <!-- Note: The phone numbers used on this page are reserved by the Australian Government for use in creative works.
+            More information can be found at the link below: -->
+        <!-- https://www.acma.gov.au/phone-numbers-use-tv-shows-films-and-creative-works -->
+        <meta charset="utf-8">
+        <meta name="author" content="Matthew Spooner">
+        <meta name="description" content="Assessment 4 Sign-up">
+        <title>Assessment 4 Sign-up</title>
+        <script defer src="js/form.js"></script>
+        <link rel="stylesheet" href="css/portfolio.css">
+        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <section id="hero-section">
+                <div class="section-container section-text">
+                    <div class="grid-header">
+                        <div class="grid-header-logo"><img src="images/portfolio-logo.png" alt="Portfolio company logo." width="200" height="200"></div>
+                        <div><h1 class="hero-heading">Sign-up</h1></div>
+                    </div>
+                </div>
+            </section>
+            <section class="main-section">
+                <div class="section-container contact-section-text">
+                    <h2 class="h2-type-2-large">Please fill out the form:</h2>
+                    <div>
+                        <p class="form-required-notice">*Required field.</p>
+                        <form id="form-target" class="signup-form" method="POST" enctype="application/x-www-form-urlencoded" action="http://csusap.csu.edu.au/cgi-bin/echo_form" target="_blank">
+                            <div class="form-item-holder">
+                                <label>*First Name: <input type="text" id="firstName-target" class="signup-text-field" name="firstName" required size="20" maxlength="60"></label>
+                            </div>
+                            <div class="form-item-holder">
+                                <label>*Last Name: <input type="text" id="lastName-target" class="signup-text-field" name="lastName" required size="20" maxlength="60"></label>
+                            </div>
+                            <div class="form-item-holder">
+                                <label>*Email Address: <input type="text" id="email-target" class="signup-text-field" name="email" required size="30" maxlength="60"></label>
+                            </div>
+                            <div class="form-item-holder">
+                                <fieldset class="grid-form-select-age">
+                                <legend>How old are you?</legend>
+                                <div><label class="radio-container"> <input type=radio name=age value="11-25">11-25<span class="radio-checkmark"></span></label></div>
+                                <div><label class="radio-container"> <input type=radio name=age value="26-35">26-35<span class="radio-checkmark"></span></label></div>
+                                <div><label class="radio-container"> <input type=radio name=age value="36-45">36-45<span class="radio-checkmark"></span></label></div>
+                                <div><label class="radio-container"> <input type=radio name=age value="46-55">46-55<span class="radio-checkmark"></span></label></div>
+                                <div><label class="radio-container"> <input type=radio name=age value="55+">55+<span class="radio-checkmark"></span></label></div>
+                                </fieldset>
+                            </div>
+                            <div class="form-item-holder">
+                                <fieldset class="grid-form-items">
+                                <legend>Which services would you like to hear more about?</legend>
+                                <div><label class="checkmark-container"><input type=checkbox name="service" value="service1">Service 1<span class="checkmark"></span></label></div>
+                                <div><label class="checkmark-container"><input type=checkbox name="service" value="service2">Service 2<span class="checkmark"></span></label></div>
+                                <div><label class="checkmark-container"><input type=checkbox name="service" value="service3">Service 3<span class="checkmark"></span></label></div>
+                                <div><label class="checkmark-container"><input type=checkbox name="service" value="service4">Service 4<span class="checkmark"></span></label></div>
+                                <div><label class="checkmark-container"><input type=checkbox name="service" value="service5">Service 5<span class="checkmark"></span></label></div>
+                                </fieldset>
+                            </div>
+                            <div class="form-item-holder">
+                                <p><label for="textareaTarget">Leave a comment:</label></p>
+                                <textarea id="textareaTarget" class="signup-textarea signup-text-field" name="message" cols="60" rows="3"></textarea>
+                            </div>
+                            <div class="form-item-holder"><input type="submit" id="submit-button" class="signup-button" value="Submit"></div>
+                            <div class="form-item-holder"><input type="reset" id="reset-button" class="signup-button" value="Reset form"></div>
+                        </form>
+                        <br>
+                        <div><button id="return-button" class="signup-button">Return to website</button></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div id="footer-container">
+                <!-- character reference example -->
+                <p>Copyright &copy; 2024, Matthew Spooner.</p>
+                <p>Phone: <a href="tel:0255501234">(02) 5550 1234</a></p>
+                <p>Mobile: <a href="tel:0491570006">0491 570 006</a></p>
+                <p>Email: <a href="mailto:mattspooner@solar.com">mattspooner@solar.com</a></p>
+            </div>
+        </footer>
+    </body>
+</html>

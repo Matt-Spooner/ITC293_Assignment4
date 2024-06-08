@@ -1,0 +1,765 @@
+/* Matthew Spooner. 8/6/2024. */
+
+/* Style radio button container. */
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide browser default radio button. */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Define style for custom radio button */
+.radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-grey-3);
+  border-radius: 50%;
+}
+
+.radio-container:hover input ~ .radio-checkmark {
+  background-color: var(--color-grey-4);
+}
+
+.radio-container input:checked ~ .radio-checkmark {
+  background-color: var(--color-orange-3);
+}
+
+/* Create the radio button dot, and set it to hidden by default. */
+.radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the radio button dot when clicked */
+.radio-container input:checked ~ .radio-checkmark:after {
+  display: block;
+}
+
+/* Define style for custom radio button when clicked. */
+.radio-container .radio-checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-white-1);
+}
+
+/* Customize the label containing the checkmark. */
+.checkmark-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide browser default checkbox. */
+.checkmark-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Define style for custom checkbox. */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-grey-3);
+  transition: 0.15s ease-in;
+}
+
+.checkmark-container:hover input ~ .checkmark {
+  background-color: var(--color-grey-4);
+  transition: 0.05s ease-out;
+}
+
+.checkmark-container input:checked ~ .checkmark {
+  background-color: var(--color-orange-3);
+}
+
+/* Create the checkmark, and set it to hidden by default. */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the custom checkmark when checked. */
+.checkmark-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Define style for custom checkmark. */
+.checkmark-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border-style: hidden solid solid hidden;
+  -webkit-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  transform: rotate(40deg);
+  outline: none;
+  border-color: var(--color-white-1);
+}
+
+legend {
+  padding-bottom: 20px;
+}
+
+.form-item-holder {
+  margin: 0;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.signup-form {
+  padding: 0;
+  margin: 0;
+  border: none;
+  scroll-behavior: smooth;
+  color: var(--color-black-1);
+}
+
+/* The CSS below for the signup button reuses some of the code for the "nav-item" class */
+.signup-button {
+  text-decoration: none;
+  color: var(--color-white-1);
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: linear-gradient(to right, var(--color-orange-3) 50%, black 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .2s ease;
+  font-family: var(--main-font-play);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.0em;
+  color: var(--color-white-1);
+}
+
+.signup-button:hover, .signup-button:focus {
+  color: var(--color-black-1);
+  transition: 0.1s ease-out;
+  background-position: left bottom;
+}
+
+.signup-button:active {
+  color: var(--color-white-1);
+}
+
+.signup-text-field {
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 4px;
+  font-size: 0.8em;
+  line-height: 1.0em;
+  color: var(--color-black-1);
+}
+
+.signup-textarea {
+  resize: none;
+  outline: none;
+}
+
+.signup-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-orange-3);
+}
+
+.grid-form-items {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto;
+  column-gap: 0px;
+  row-gap: 0px;
+  min-width: 200px;
+}
+
+.grid-form-item-holder {
+  margin: 0;
+  padding: 10px;
+}
+
+.grid-form-select-age {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto;
+  column-gap: 0px;
+  row-gap: 0px;
+}
+
+input[type=text]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-orange-3);
+}
+
+/* Style text paragraph indicating certain fields are required in smaller fineprint text. */
+.form-required-notice {
+  font-size: 0.7em;
+  line-height: 1.0em;
+  color: var(--color-black-1);
+}
+
+/* Prevent number selector spin button appearing (Safari) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Prevent number selector spin button appearing (Firefox) */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* This was used in internal style sheet on the index.html page for Assignment 2. */
+.old-internal-style-centre-text {text-align: center;}
+
+/* This was used for inline stylung on the web skills page for Assignment 2. */
+.old-inline-underline {text-decoration: underline;}
+
+.image-with-caption-container {
+  font-size: 0.4rem;
+  line-height: 0.7rem;
+  color: var(--color-grey-1);
+}
+
+.caption-width {width: 380px;}
+
+table, th, td {border: none;}
+
+th, td {padding: 10px;}
+
+tbody th {
+  background-color: var(--color-dark-blue-grey);
+  color: var(--color-white-1);
+  text-align: left;
+  font-family: var(--main-font-play);
+  font-size: 1.3rem;
+}
+
+td {
+  background-color: var(--color-grey-2);
+  text-align: left;
+  vertical-align: top;
+}
+
+.resume-table-container {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-black-1);
+}
+
+.resume-table-list-text {
+  font-weight: 400;
+  color: var(--color-dark-blue-grey);
+  font-size: 1.1rem;
+}
+
+/* CSS for three differently aligned paragraphs */
+.left-aligned-paragraph {text-align: left}
+
+.right-aligned-paragraph {text-align: right;}
+
+.center-aligned-paragraph {text-align: center;}
+
+.justify-text-paragraph {text-align: justify;}
+
+/* CSS for at least two different text-decorations */
+.line-through-text {text-decoration: line-through;}
+
+.underline-text {text-decoration: underline;}
+
+.overline-text {text-decoration: overline;}
+
+.combination-line-text {text-decoration: overline underline line-through;}
+
+/* CSS to change the bullet type on an unordered list to squares */
+.square-list {
+  list-style-type: square;
+  padding-inline-start: 40px;
+  padding-bottom: 20px;
+  line-height: 1.8em;
+}
+
+/* CSS to change the numbers on an ordered list to Roman numerals */
+.roman-list {
+  list-style-type: upper-roman;
+  padding-inline-start: 40px;
+  padding-bottom: 20px;
+}
+
+/* Use of a universal selector */
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-dark-blue-grey: #394958;
+  --color-orange-1: #f36701;
+  --color-orange-2: #f2ad46;
+  --color-orange-3: #f29100;
+  --color-white-1: #FFF;
+  --color-black-1: #000;
+  --color-grey-1: #808080;
+  --color-grey-2: whitesmoke;
+  --color-grey-3: #eee;
+  --color-grey-4: #ccc;
+
+  --color-red-1: red;
+  --color-entire-webpage-background: #394958;
+  --color-background-light: #FFF;
+  /* Font family example */
+  --main-font-play: "Play", "Helvetica Neue", Avenir, Futura, Optima, sans-serif;
+  --main-font-manrope: "Manrope", "Helvetica Neue", Avenir, Futura, Optima, sans-serif;
+  --section-content-w: 1000px;
+  --section-padding-w: 20px;
+  --section-padding-h: 40px;
+  --min-height-s: 50px;
+  --min-height-l: 380px;
+  --nav-width: 1140px;
+}
+
+/* CSS to apply a background colour to the entire webpage */
+html {
+  /* Background colour example 1 */
+  background: var(--color-entire-webpage-background);
+}
+
+body {
+  font-family: var(--main-font-manrope);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-black-1);
+}
+
+p {padding-bottom: 1em;}
+
+/* Use of an ID selector */
+#hero-section {
+  padding-top: 100px;
+  padding-bottom: var(--section-padding-h);
+  padding-left: var(--section-padding-w);
+  padding-right: var(--section-padding-w);
+  color: var(--color-black-1);
+  background: linear-gradient(360deg, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0));
+  min-height: 190px;
+}
+
+.main-section {
+  padding: var(--section-padding-h) var(--section-padding-w);
+  /* Background colour example 2 */
+  background: var(--color-background-light);
+  color: var(--color-dark-blue-grey);
+}
+
+.section-container {
+  max-width: var(--section-content-w);
+  margin: auto;
+}
+
+.section-text {
+  color: inherit;
+  line-height: 1.5em;
+  font-size: 1.2rem;
+}
+
+.contact-section-text {
+  color: inherit;
+  line-height: 1.5em;
+  font-size: 1.2rem;
+  padding-bottom: 220px;
+}
+
+.indented-div {padding-left: 30px;}
+
+.content-subsection {padding-bottom: 40px;}
+
+.contact-details-list {
+  font-family: var(--main-font-play);
+  font-size: 1.4rem;
+}
+
+h1 {
+  font-family: var(--main-font-play);
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: var(--color-black-1);
+  padding-bottom: 30px;
+  padding-top: 40px;
+  line-height: 1.2em;
+}
+
+.hero-heading {color: var(--color-white-1);}
+
+h2 {
+  font-family: var(--main-font-play);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.8rem;
+  padding-bottom: 30px;
+  line-height: 1.2em;
+  color: var(--color-black-1);
+}
+
+.heading-add-bottom-padding {
+  padding-bottom: 50px;
+}
+
+.hero-subheading {
+  font-family: var(--main-font-play);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: var(--color-black-1);
+  padding-bottom: 30px;
+  line-height: 1.2em;
+}
+
+.hero-subheading-italic {
+  /* font example 1 */
+  font-family: var(--main-font-play);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.8rem;
+  padding-bottom: 30px;
+  line-height: 1.2em;
+  color: var(--color-orange-2);
+}
+
+.find-out-heading {
+  font-family: var(--main-font-play);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: var(--color-orange-2);
+  padding-bottom: 30px;
+  line-height: 1.2em;
+}
+
+.h2-type-2-large {
+  font-family: var(--main-font-play);
+  font-weight: bold;
+  font-style: normal;
+  font-size: 2.5rem;
+  color: var(--color-black-1);
+  padding-bottom: 30px;
+  line-height: 1.2em;
+}
+
+.h2-type-2-regular {
+  font-family: var(--main-font-play);
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.8rem;
+  color: var(--color-black-1);
+  padding-bottom: 30px;
+  line-height: 1.2em;
+}
+
+h3 {
+  padding-bottom: 20px;
+  color: var(--color-black-1);
+  font-family: var(--main-font-play);
+}
+
+footer {
+  background: linear-gradient(180deg, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0));
+  min-height: 330px;
+}
+
+#footer-container {
+  /* font example 2 */
+  max-width: var(--section-content-w);
+  margin: auto;
+  padding: var(--section-padding-h) var(--section-padding-w);
+  font-family: var(--main-font-play);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.0rem;
+  color: var(--color-orange-2);
+}
+
+a:link, a:visited {color: var(--color-orange-1);}
+
+a:hover, a:active {color: var(--color-red-1);}
+
+footer a:link, footer a:visited {color: var(--color-orange-2);}
+
+footer a:hover, footer a:active {color: var(--color-red-1);}
+
+.darker-link-colour {font-weight: 800;}
+
+.darker-link-colour:link, .darker-link-colour:visited {color: var(--color-orange-1);}
+
+.darker-link-colour:hover, .darker-link-colour:active {color: var(--color-red-1);}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: auto;
+  column-gap: 30px;
+  row-gap: 10px;
+}
+
+.grid-container-2-items {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.grid-container-certifications {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  column-gap: 10px;
+  /* The line below adds a scroll bar when the screen is too narrow for all items in the container to fit. */
+  overflow-x: scroll;
+}
+
+.grid-container-choose-us {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 50px;
+  row-gap: 50px;
+}
+
+.grid-container-choose-us-item {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+header {
+  margin: auto;
+  max-width: var(--nav-width);
+  padding: 0 10px;
+  display: flex;
+  /* The line below makes the hamburger menu button appear on the right of the screen */
+  justify-content: flex-end;
+}
+
+header ul {list-style: none;}
+
+.display-none {display: none;}
+
+nav {
+  transition: 0.3s ease;
+  position: fixed;
+  z-index: 1000;
+  height: var(--min-height-s);
+  width: var(--min-height-s);
+  max-width: var(--nav-width);
+  margin-top: 10px;
+  border-radius: 17px;
+  background: rgba(0,0,0,0.80);
+  backdrop-filter: blur(40px) saturate(300%) contrast(200%);
+  /* backdrop-filter is not supported in Safari, so the line below is used to get this to work. */
+  -webkit-backdrop-filter: blur(40px) saturate(300%) contrast(200%);
+}
+
+.nav-opened {
+  min-height: var(--min-height-l);
+  width: calc(100% - 20px);
+}
+
+.nav-closed {min-height: var(--min-height-s);}
+
+.nav-list {
+  opacity: 0;
+  margin: auto;
+  line-height: 2.5em;
+  padding: 50px 40px 20px 50px;
+  /* font-size: 16px; */
+  font-family: var(--main-font-play);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.0rem;
+  color: var(--color-white-1);
+}
+
+.nav-list-animation {
+  /* This is used to stop the buttons and text in the open hamburger menu from being visible
+  immediately when the hamburger button is clicked. It instead causes them to fade in smoothly as the
+  panel for the opened hamburger menu expands, by gradually increasing the opacity property from 0 to 1. */
+  /* It uses the animation "opacity-anim" which is defined at the end of the document.  */
+  animation: opacity-anim 1s 0.1s ease forwards;
+}
+
+.nav-item, .nav-item:link, .nav-item:visited {
+  text-decoration: none;
+  color: var(--color-white-1);
+  padding: 5px 12px;
+  border-radius: 8px;
+  /* The lines below are responsible for the orange button fill that appears from left to right when the user hovers on a button in the navigation menu.
+  Basically, we define a background that is larger than the visible background of the button, and move this to the right when the button is
+  hovered over to give the appearance of the orange fade in effect.
+  When the button is not hovered the background is moved back to the left, giving the appearance of the reverse effect. */
+  background: linear-gradient(to right, var(--color-orange-3) 50%, transparent 50%);
+  background-size: 200% 100%;
+  /* These two lines below control the orange button fill disappearing. */
+  background-position: right bottom;
+  transition: all .2s ease;
+}
+
+.nav-item:hover, .nav-item:focus {
+  color: var(--color-black-1);
+  /* These two lines below control the orange button fill appearing. */
+  transition: 0.1s ease-out;
+  background-position: left bottom;
+}
+
+.nav-item:active {color: var(--color-white-1);}
+
+.nav-item-locator, .nav-item-locator:link, .nav-item-locator:visited {
+  background: var(--color-orange-3);
+  color: var(--color-black-1);
+}
+
+.nav-item-locator:hover, .nav-item-locator:focus {
+  background: var(--color-orange-3);
+  color: var(--color-black-1);
+}
+
+.nav-item-locator:active {color: var(--color-white-1);}
+
+.hamburger-lines {
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  transition: 0.4s ease;
+}
+
+.hamburger-light {stroke: var(--color-white-1);}
+
+#hamburger-svg-container {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+#hamburger-svg {
+  /* This is used to scale all the svg elements of the hamburger button as a group, rather than individually. */
+  transform: scale(0.9);
+}
+
+#hamburger-button {
+  appearance: none;
+  /* appearance is not supported in Safari without the webkit prefix, so the line below is used for Safari. */
+  -webkit-appearance: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  z-index: 1001;
+}
+
+@media only screen and (min-width: 850px) {
+  .nav-list {
+    display: flex;
+    gap: 10px;
+    padding: 18px 12px;
+    max-width: 1000px;
+    justify-content:space-around;
+    line-height: 1em;
+    font-size: 14px;
+  }
+
+  .nav-opened {
+    min-height: var(--min-height-s);
+    width: calc(100% - 20px);
+  }
+
+  .nav-closed {width: calc(100% - 20px);}
+
+  #hamburger-svg-container {display: none;}
+
+  .grid-container-2-items {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+  }
+
+  .grid-container-certifications {
+    /* If the window is big enough for the row of logo images to fit, this is used to hide the scrollbar. */
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (max-height: 400px) and (max-width: 849px) {
+  .nav-opened {min-height: 300px;}
+
+  .nav-list {line-height: 2em;}
+}
+
+@keyframes opacity-anim {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media print {
+  /* The CSS in this section modifies the appearance of the page to be "print friendly", so
+  that it is printed without the navigation bar or hamburger menu, the background colour is
+  removed, and it prints with a larger font size than displayed on the screen. */
+  html {
+    font-size: 1.2rem;
+    color: var(--color-black-1);
+  }
+
+  .main-section {color: var(--color-black-1);}
+
+  h1 {color: var(--color-black-1);}
+
+  h2 {color: var(--color-black-1);}
+
+  h3 {color: var(--color-black-1);}
+
+  .hero-heading {color: var(--color-black-1);}
+
+  .hero-subheading-italic {color: var(--color-black-1);}
+
+  body {color: var(--color-black-1);}
+
+  .section-text {color: var(--color-black-1);}
+}
